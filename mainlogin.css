@@ -16,11 +16,6 @@ html {
 
 }
 
-/* .container {
-    width: 300px;
-    height: 100px;
-    display: block;
-} */
 .container {
     background-color: #ffffff;
 
@@ -37,6 +32,7 @@ html {
     border-radius: 5px;
 }
 
+.auth-form_img {}
 
 .svgContainer {
     position: relative;
@@ -48,23 +44,8 @@ html {
     pointer-events: none;
 }
 
-.svgContainer div {
-    position: relative;
-    width: 200px;
-    height: 0;
-    overflow: hidden;
-    border-radius: 50%;
-    padding-bottom: 100%;
-}
 
-.svgContainer .mySVG {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 200px;
-    height: 200px;
-    pointer-events: none;
-}
+
 
 .svgContainer_img-src {
     width: 200px;
@@ -75,31 +56,58 @@ html {
 .auth-form__container {
     margin: 0 5px 10px 10px;
     display: block;
+    position: relative;
+    width: 290px;
 }
 
-.auth-form_label {
+.auth-form {
+
     display: flex;
     justify-content: space-between;
-    color: #217093;
     font-size: 0.9rem;
-    margin: 0 10px;
+    margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
 }
 
-.auth-form_label_login::after {
-    content: "";
+
+
+.auth-form_label {
+    color: rgba(33, 112, 147, 1);
+    opacity: 0.6;
+}
+
+.auth-form_label.active {
+    opacity: 1;
+}
+
+
+.auth-form_label:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+.line {
     position: absolute;
     width: 152px;
     height: 4px;
     background-color: #217093;
     top: 22%;
-    left: 43%;
+    left: 0px;
+    transition: all 0.2s ease;
+}
 
+
+
+.auth-form__form {
+    display: block;
 }
 
 .auth-form__group {
     margin-top: 0.5rem;
+
+
 }
 
 .auth-form__group_label {
@@ -111,12 +119,14 @@ html {
     color: #217093;
     font-weight: 700;
     font-family: inherit;
+    cursor: default;
 }
 
 .auth-form__input {
     border-radius: 4px;
     border: solid 2px #217093;
     height: 40px;
+    width: 98%;
     font-size: 1.55em;
     color: #353538;
     font-weight: 600;

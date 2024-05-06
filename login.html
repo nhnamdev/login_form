@@ -15,16 +15,21 @@
 
 <body>
     <div class="container">
-
-        <div class="auth-form">
+        <div class="auth-form_img">
             <div class="svgContainer">
                 <img class="svgContainer_img-src" src="/cd.png" alt="">
             </div>
         </div>
+
+
+
+
         <div class="auth-form__container">
-            <div class="auth-form_label">
-                <H1 class="auth-form_label_login">Đăng Nhập</H1>
-                <!-- <H1 class="auth-form_label_register">Đăng Ký</H1> -->
+            <div class="auth-form">
+                <H1 class="auth-form_label active">Đăng Nhập</H1>
+                <H1 class="auth-form_label ">Đăng Kí </H1>
+                <div class="line"></div>
+
             </div>
             <div class="auth-form__form">
                 <div class="auth-form__group">
@@ -39,7 +44,35 @@
 
         </div>
     </div>
-    </div>
+    <script>
+        const $ = document.querySelector.bind(document);
+        const $$ = document.querySelectorAll.bind(document);
+        const tabs = $$('.auth-form_label');
+
+        const line = $('.line');
+
+
+        line.style.left = this.offsetLeft + "px";
+        line.style.width = this.offsetWidth + "px";
+
+        console.log(tabs)
+        tabs.forEach((tab, index) => {
+            tab.onclick = function () {
+                console.log(this);
+                $('.auth-form_label.active').classList.remove('active');
+
+
+
+                line.style.left = this.offsetLeft + "px";
+                line.style.width = this.offsetWidth + "px";
+
+                this.classList.add('active');
+            }
+        });
+
+
+
+    </script>
 
 </body>
 

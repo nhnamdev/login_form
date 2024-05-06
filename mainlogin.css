@@ -101,6 +101,10 @@ html {
 
 
 .auth-form__form {
+    display: none;
+}
+
+.auth-form__form.active {
     display: block;
 }
 
